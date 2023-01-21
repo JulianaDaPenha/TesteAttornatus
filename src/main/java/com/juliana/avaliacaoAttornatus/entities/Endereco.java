@@ -1,5 +1,7 @@
 package com.juliana.avaliacaoAttornatus.entities;
 
+import java.io.Serializable;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,19 +10,22 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_endereco")
-public class Endereco {
+public class Endereco implements Serializable {
+	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
 	private String Logradouro;
 	private String cep;
 	private Integer numero;
 	private String cidade;
 
-	public Endereco(String logradouro, String cep, Integer numero, String cidade) {
+	public Endereco(Long id, String logradouro, String cep, Integer numero, String cidade) {
 		super();
 		Logradouro = logradouro;
+		this.id = id;
 		this.cep = cep;
 		this.numero = numero;
 		this.cidade = cidade;

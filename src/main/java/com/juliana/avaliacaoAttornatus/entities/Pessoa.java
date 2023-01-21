@@ -20,6 +20,8 @@ public class Pessoa implements Serializable {
 	private String nome;
 	private String dataNasc;
 
+	//private List<Endereco> Enderecos = new ArrayList<>();
+
 	public Pessoa() {
 		super();
 	}
@@ -54,5 +56,9 @@ public class Pessoa implements Serializable {
 	public void setDataNasc(String dataNasc) {
 		this.dataNasc = dataNasc;
 	}
+
+//	public List<Endereco> getEnderecos() {
+//		return Enderecos;
+//	}
 
 }

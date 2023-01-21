@@ -9,25 +9,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.juliana.avaliacaoAttornatus.entities.Pessoa;
-import com.juliana.avaliacaoAttornatus.repositories.PessoaRepository;
+import com.juliana.avaliacaoAttornatus.entities.Endereco;
+import com.juliana.avaliacaoAttornatus.repositories.EnderecoRepository;
 
 @RestController
-@RequestMapping(value = "/pessoas")
-public class PessoaResource {
+@RequestMapping(value = "/enderecos")
+public class EnderecoResource {
 
 	@Autowired
-	private PessoaRepository pessoaRepository;
+	private EnderecoRepository pessoaRepository;
 	
 	@GetMapping
-	public ResponseEntity<List<Pessoa>> findAll() {
-		List<Pessoa> list = pessoaRepository.findAll();
+	public ResponseEntity<List<Endereco>> findAll() {
+		List<Endereco> list = pessoaRepository.findAll();
 		return ResponseEntity.ok().body(list);
 	}
 
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<Pessoa> findById(@PathVariable Long id) {
-		Pessoa pessoa = pessoaRepository.findById(id);
+	public ResponseEntity<Endereco> findById(@PathVariable Long id) {
+		Endereco pessoa = pessoaRepository.findById(id);
 		return ResponseEntity.ok().body(pessoa);
 	}
 	
