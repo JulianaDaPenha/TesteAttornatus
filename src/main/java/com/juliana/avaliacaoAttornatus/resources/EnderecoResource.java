@@ -18,7 +18,7 @@ public class EnderecoResource {
 
 	@Autowired
 	private EnderecoRepository pessoaRepository;
-	
+
 	@GetMapping
 	public ResponseEntity<List<Endereco>> findAll() {
 		List<Endereco> list = pessoaRepository.findAll();
@@ -30,6 +30,5 @@ public class EnderecoResource {
 		Endereco pessoa = pessoaRepository.findById(id);
 		return ResponseEntity.ok().body(pessoa);
 	}
-	
 
 }

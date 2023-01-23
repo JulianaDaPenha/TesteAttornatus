@@ -14,8 +14,8 @@ public class PessoaRepository {
 
 	private Map<Long, Pessoa> map = new HashMap<>();
 
-	public void save(Pessoa obj) {
-		map.put(obj.getId(), obj);
+	public Pessoa save(Pessoa obj) {
+		return map.put(obj.getId(), obj);
 
 	}
 
@@ -26,4 +26,5 @@ public class PessoaRepository {
 	public List<Pessoa> findAll() {
 		return new ArrayList<Pessoa>(map.values());
 	}
+
 }

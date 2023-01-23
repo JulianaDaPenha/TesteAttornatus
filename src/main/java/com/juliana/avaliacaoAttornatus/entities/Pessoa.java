@@ -20,17 +20,20 @@ public class Pessoa implements Serializable {
 	private String nome;
 	private String dataNasc;
 
-	//private List<Endereco> Enderecos = new ArrayList<>();
+	private Endereco enderecoResidencial;
+	private Endereco enderecoComercial;
 
 	public Pessoa() {
 		super();
 	}
 
-	public Pessoa(Long id, String nome, String dataNasc) {
+	public Pessoa(Long id, String nome, String dataNasc, Endereco enderecoResidencial, Endereco enderecoComercial) {
 		super();
 		this.id = id;
 		this.nome = nome;
 		this.dataNasc = dataNasc;
+		this.enderecoResidencial = enderecoResidencial;
+		this.enderecoComercial = enderecoComercial;
 	}
 
 	public Long getId() {
@@ -57,8 +60,20 @@ public class Pessoa implements Serializable {
 		this.dataNasc = dataNasc;
 	}
 
-//	public List<Endereco> getEnderecos() {
-//		return Enderecos;
-//	}
+	public Endereco getEnderecoResidencial() {
+		return enderecoResidencial;
+	}
+
+	public void setEnderecoResidencial(Endereco enderecoResidencial) {
+		this.enderecoResidencial = enderecoResidencial;
+	}
+
+	public Endereco getEnderecoComercial() {
+		return enderecoComercial;
+	}
+
+	public void setEnderecoComercial(Endereco enderecoComercial) {
+		this.enderecoComercial = enderecoComercial;
+	}
 
 }

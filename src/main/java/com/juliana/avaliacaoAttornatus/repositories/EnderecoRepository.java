@@ -14,8 +14,8 @@ public class EnderecoRepository {
 
 	private Map<Long, Endereco> map = new HashMap<>();
 
-	public void save(Endereco obj) {
-		map.put(obj.getId(), obj);
+	public Endereco save(Endereco obj) {
+		return map.put(obj.getId(), obj);
 
 	}
 
@@ -26,4 +26,5 @@ public class EnderecoRepository {
 	public List<Endereco> findAll() {
 		return new ArrayList<Endereco>(map.values());
 	}
+
 }
